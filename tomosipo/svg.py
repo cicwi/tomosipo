@@ -76,7 +76,7 @@ def line_item(pos, width=1, color=(0.0, 0.0, 0.0, 1.0)):
 
     """
 
-    pos = np.array(pos, dtype=np.float64, copy=False)
+    pos = np.asarray(pos, dtype=np.float64)
     assert pos.ndim == 2
     assert pos.shape[1] == 3
 

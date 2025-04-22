@@ -28,9 +28,9 @@ from contextlib import contextmanager
 
 
 def to_vec(x):
-    x = np.array(x, dtype=np.float64, copy=False)
+    x = np.asarray(x, dtype=np.float64)
     s = x.shape
-    x = np.array(x, dtype=np.float64, copy=False, ndmin=2)
+    x = ts.utils.atleast_nd(x, ndmin=2)
 
     if x.ndim == 2 and x.shape[1] == 3:
         return x
@@ -44,9 +44,9 @@ def to_vec(x):
 
 
 def to_scalar(x):
-    x = np.array(x, dtype=np.float64, copy=False)
+    x = np.asarray(x, dtype=np.float64)
     s = x.shape
-    x = np.array(x, dtype=np.float64, copy=False, ndmin=1)
+    x = ts.utils.atleast_nd(x, ndmin=1)
 
     if x.ndim == 1:
         # Add a single dimension to the right. Note that `to_vec` adds
@@ -98,8 +98,8 @@ def broadcast_lengths(len_a, len_b):
 
 
 def _broadcastv(x, y):
-    x = np.array(x, copy=False)
-    y = np.array(y, copy=False)
+    x = np.asarray(x)
+    y = np.asarray(y)
     # Save original shapes for error messages later.
     s1, s2 = x.shape, y.shape
     # Add dimensions, if necessary:
@@ -120,7 +120,7 @@ def _broadcastv(x, y):
 
 
 def _broadcastmv(M, x):
-    M, x = np.array(M, copy=False), np.array(x, copy=False)
+    M, x = np.asarray(M), np.asarray(x)
     # Save original shapes for error messages later.
     s1, s2 = M.shape, x.shape
 
@@ -146,8 +146,8 @@ def _broadcastmv(M, x):
 
 
 def _broadcastmm(M1, M2):
-    M1 = np.array(M1, copy=False)
-    M2 = np.array(M2, copy=False)
+    M1 = np.asarray(M1)
+    M2 = np.asarray(M2)
     # Save original shapes for error messages
     s1 = M1.shape
     s2 = M2.shape

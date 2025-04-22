@@ -117,3 +117,13 @@ def slice_interval(left, right, length, key):
 
     # Prevent division by zero
     return (L, R, new_len, new_pixel_size)
+
+
+def atleast_nd(array, ndmin):
+    """View input as array with at least `ndmin` dimensions.
+    
+    This is different from numpy.atleast_1d/2d in that it prepends
+    dimensions instead of appending them.
+
+    """
+    return np.array(array, ndmin=ndmin, copy=False)

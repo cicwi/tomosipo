@@ -16,7 +16,7 @@ class NumpyLink(Link):
             self._data = np.zeros(shape, dtype=np.float32)
             self._data[:] = initial_value
         else:
-            initial_value = np.array(initial_value, copy=False)
+            initial_value = np.asarray(initial_value)
             if initial_value.shape != shape:
                 raise ValueError(
                     "Cannot link array. "

@@ -276,7 +276,8 @@ def to_scalars(s: ToScalars, var_name="scalars", accept_empty=False) -> Scalars:
     TypeError: Could not convert to array of scalars: array contains NaN.
     """
     try:
-        s = np.array(s, dtype=np.float64, ndmin=1, copy=False)
+        s = np.asarray(s, dtype=np.float64)
+        s = ts.utils.atleast_nd(s, ndmin=1)
     except ValueError:
         raise TypeError(f"Could not convert {var_name} to np.array. Got: {repr(s)}.")
     if np.any(np.isnan(s)):
@@ -330,11 +331,11 @@ def to_vec(vec: ToVec, var_name="vector") -> Vec:
     TypeError: Could not convert vector to np.array. Got: 'string'.
     """
     try:
-        vec = np.array(vec, dtype=np.float64, copy=False)
+        vec = np.asarray(vec, dtype=np.float64)
     except ValueError:
         raise TypeError(f"Could not convert {var_name} to np.array. Got: {repr(vec)}.")
     shape = vec.shape
-    vec = np.array(vec, dtype=np.float64, copy=False, ndmin=2)
+    vec = ts.utils.atleast_nd(vec, ndmin=2)
 
     if vec.ndim == 2 and vec.shape[1] == 3:
         return vec
@@ -352,11 +353,11 @@ def to_homogeneous(vec, s) -> HomogeneousVec:
     """
     s = float(s)
     try:
-        vec = np.array(vec, dtype=np.float64, copy=False)
+        vec = np.asarray(vec, dtype=np.float64)
     except ValueError:
         raise TypeError(f"Could not convert value to np.array. Got: {repr(vec)}.")
     shape = vec.shape
-    vec = np.array(vec, dtype=np.float64, copy=False, ndmin=2)
+    vec = ts.utils.atleast_nd(vec, ndmin=2)
 
     if vec.ndim == 2:
         if vec.shape[1] == 4:
