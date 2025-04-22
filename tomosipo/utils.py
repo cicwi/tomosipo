@@ -28,7 +28,7 @@ def print_options():
         infstr="inf",
         sign="-",
         formatter=None,
-        legacy=False,
+        legacy='1.21',
     )
 
 

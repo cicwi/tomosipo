@@ -13,7 +13,7 @@ with open('README.md') as readme_file:
 
 requirements = [
     'astra-toolbox>=2.0',
-    'numpy',
+    'numpy>=1.21',
 ]
 
 setup_requirements = [

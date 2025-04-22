@@ -226,13 +226,14 @@ class VolumeGeometry:
         np.array(self._inner.size)
 
     def __repr__(self):
-        return (
-            f"ts.volume(\n"
-            f"    shape={self._inner.shape},\n"
-            f"    pos={tuple(self.pos[0])},\n"
-            f"    size={self.size},\n"
-            f")"
-        )
+        with ts.utils.print_options():
+            return (
+                f"ts.volume(\n"
+                f"    shape={self._inner.shape},\n"
+                f"    pos={tuple(self.pos[0])},\n"
+                f"    size={self.size},\n"
+                f")"
+            )
 
     def __eq__(self, other):
         # TODO: Consider VolumeVectorGeometries...

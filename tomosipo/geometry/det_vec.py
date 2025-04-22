@@ -104,14 +104,15 @@ class DetectorVectorGeometry(ProjectionGeometry):
         self._is_vector = True
 
     def __repr__(self):
-        return (
-            f"DetectorVectorGeometry(\n"
-            f"    shape={self.det_shape},\n"
-            f"    det_pos={self._det_pos},\n"
-            f"    det_u={self._det_v},\n"
-            f"    det_v={self._det_u}"
-            f")"
-        )
+        with ts.utils.print_options():
+            return (
+                f"DetectorVectorGeometry(\n"
+                f"    shape={self.det_shape},\n"
+                f"    det_pos={self._det_pos},\n"
+                f"    det_u={self._det_v},\n"
+                f"    det_v={self._det_u}"
+                f")"
+            )
 
     def __eq__(self, other):
         if not isinstance(other, DetectorVectorGeometry):

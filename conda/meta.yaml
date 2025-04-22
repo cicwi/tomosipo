@@ -30,6 +30,7 @@ requirements:
     run:
         - python >=3.6
         - astra-toolbox >=2.0
+        - numpy >=1.21
 
 about:
     home: https://github.com/ahendriksen/tomosipo

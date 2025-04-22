@@ -52,7 +52,8 @@ class Transform(object):
             return NotImplemented
 
     def __repr__(self):
-        return f"Transform(\n" f"    {self.matrix}\n" f")"
+        with ts.utils.print_options():
+            return f"Transform(\n" f"    {self.matrix}\n" f")"
 
     def __eq__(self, other):
         if not isinstance(other, Transform):
