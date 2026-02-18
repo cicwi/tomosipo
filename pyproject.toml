@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tomosipo"
+version = "0.7.0"
+description = "A usable Python astra-based tomography library."
+readme = "README.md"
+license = "GPL-3.0-only"
+authors = [
+    { name = "Allard Hendriksen", email = "allard.hendriksen@cwi.nl" },
+]
+requires-python = ">=3.6"
+keywords = [
+    "tomography",
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+dependencies = [
+    "astra-toolbox>=2.0,!=2.3.0",
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "autopep8",
+    "autopep8",
+    "black",
+    "coverage",
+    "flake8",
+    "importmagic",
+    "jedi",
+    "pytest",
+    "pytest-runner",
+    "recommonmark",
+    "rope",
+    "snakeviz",
+    "sphinx",
+    "sphinx-autodoc-typehints",
+    "sphinx_rtd_theme",
+    "watchdog",
+    "yapf",
+]
+
+[project.urls]
+Homepage = "https://github.com/ahendriksen/tomosipo"
