@@ -79,7 +79,7 @@ def _is_package_available(package):
     except ModuleNotFoundError:
         return False
 
-dependencies = ["cupy", "ffmpeg", "pyqtgraph", "torch", "odl"]
+dependencies = ["cupy", "ffmpeg", "pyqtgraph", "OpenGL", "torch", "odl"]
 autodoc_mock_imports = [p for p in dependencies if not _is_package_available(p)]
 autosummary_generate = True
 
