@@ -1,15 +1,17 @@
-{% set data = load_setup_py_data() %}
+{% set pyproject = load_file_data("pyproject.toml") %}
+{% set project = pyproject["project"] %}
+{% set version = project["version"] %}
 
 package:
-    name: tomosipo
+    name: {{ project["name"] }}
     # If this release is tagged, use bare version number. Otherwise,
     # append 'dev' to version number.
     # This scheme complies with PEP-386:
     # https://www.python.org/dev/peps/pep-0386/
     {% if environ.get('GIT_DESCRIBE_NUMBER', '0') == '0' %}
-    version: {{ data['version'] }}
+    version: {{ project["version"] }}
     {% else %}
-    version: {{ data['version'] + "dev" }}
+    version: {{ project["version"] + "dev" }}
     {% endif %}
 
 
@@ -24,8 +26,9 @@ requirements:
     host:
         - python >=3.6
         - astra-toolbox >=2.0
-        - setuptools
-        - pytest-runner
+        - pip
+        - setuptools >=61
+        - wheel
 
     run:
         - python >=3.6
@@ -33,10 +36,10 @@ requirements:
         - numpy >=1.21
 
 about:
-    home: https://github.com/ahendriksen/tomosipo
-    license: GPL-3.0-only
+    home: {{ project["urls"]["Homepage"] }}
+    license: {{ project["license"]["text"] }}
     license_file: LICENSE
-    summary: "Library for painless 3D tomographic reconstruction based on Astra."
+    summary: "{{ project["description"] }}"
 
 extra:
     maintainers:
