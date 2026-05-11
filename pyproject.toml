@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tomosipo"
+version = "0.7.0"
+description = "A usable Python astra-based tomography library."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-only" }
+authors = [
+    { name = "Allard Hendriksen" },
+]
+keywords = ["tomography"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "astra-toolbox>=2.0,!=2.3.0",
+    "numpy>=1.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "sphinx-autodoc-typehints",
+    "myst-parser",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/cicwi/tomosipo"
+
+[tool.setuptools.packages.find]
+include = ["tomosipo*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+
+[tool.ruff]
+extend-exclude = ["docs"]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["C90", "E", "F", "W", "B"]

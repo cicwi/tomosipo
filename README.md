@@ -204,7 +204,7 @@ tomosipo is developed by the Computational Imaging group at CWI.
 
 Current maintainer:
 
--   **Dirk Schut**
+-   **Alexander Skorikov**
 
 Original author:
 
@@ -213,6 +213,7 @@ Original author:
 We thank the following authors for their contribution
 
 -   **Johannes Leuschner** - ODL integration
+-   **Dirk Schut** - various features and long time maintenance of the package
 
 See also the list of contributors who participated in this project.
 
