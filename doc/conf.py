@@ -13,7 +13,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-from recommonmark.parser import CommonMarkParser
 import doctest
 import importlib
 
@@ -38,7 +37,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.doctest',
     'sphinx.ext.viewcode',
-    'recommonmark',
+    'myst_parser',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -64,8 +63,7 @@ html_static_path = ['_static']
 html_logo = "./img/logo.svg"
 
 
-# -- Support markdown -----------------------------------------------------
-# See: <https://blog.readthedocs.com/adding-markdown-support/>
+# -- Support markdown --------------------------------------------------------
 
 source_suffix = {
     '.rst': 'restructuredtext',
