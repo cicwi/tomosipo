@@ -52,10 +52,6 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/cicwi/tomosipo"
 
-[tool.setuptools]
-include-package-data = true
-zip-safe = false
-
 [tool.setuptools.packages.find]
 include = ["tomosipo*"]
 
