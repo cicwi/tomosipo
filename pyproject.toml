@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "GPL-3.0-only" }
 authors = [
-    { name = "Allard Hendriksen", email = "allard.hendriksen@cwi.nl" },
+    { name = "Allard Hendriksen" },
 ]
 keywords = ["tomography"]
 classifiers = [
