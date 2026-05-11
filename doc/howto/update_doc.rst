@@ -9,7 +9,7 @@ To update the API reference, execute:
 
 .. code-block:: bash
 
-    sphinx-apidoc -M -f -e --tocfile api_reference -H "API Reference" --ext-autodoc  -o doc/ref/ tomosipo
+    sphinx-apidoc -M -f -e --tocfile api_reference -H "API Reference" --ext-autodoc --automodule-options members,show-inheritance,undoc-members,no-index -o doc/ref/ tomosipo
 
 This is only needed when the module hierarchy has changed.
 

@@ -34,6 +34,7 @@ dev = [
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autodoc-typehints",
+    "typing_extensions",  # Sphinx autodoc import mock requirement
     "myst-parser",
     "pytest",
 ]
