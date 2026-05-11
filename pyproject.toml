@@ -29,7 +29,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "flake8",
+    "ruff",
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autodoc-typehints",
@@ -47,3 +47,10 @@ include = ["tomosipo*"]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
 ]
+
+[tool.ruff]
+extend-exclude = ["docs"]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["C90", "E", "F", "W", "B"]
