@@ -24,14 +24,14 @@ build:
 
 requirements:
     host:
-        - python >=3.6
+        - python >=3.10
         - astra-toolbox >=2.0
         - pip
         - setuptools >=61
         - wheel
 
     run:
-        - python >=3.6
+        - python >=3.10
         - astra-toolbox >=2.0,!=2.3.0
         - numpy >=1.21
 

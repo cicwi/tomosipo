@@ -7,7 +7,7 @@ name = "tomosipo"
 version = "0.7.0"
 description = "A usable Python astra-based tomography library."
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.10"
 license = { text = "GPL-3.0-only" }
 authors = [
     { name = "Allard Hendriksen", email = "allard.hendriksen@cwi.nl" },
@@ -17,10 +17,11 @@ classifiers = [
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
     "astra-toolbox>=2.0,!=2.3.0",
