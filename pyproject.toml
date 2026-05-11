@@ -29,24 +29,12 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "autopep8",
-    "rope",
-    "jedi",
     "flake8",
-    "importmagic",
-    "autopep8",
-    "black",
-    "yapf",
-    "snakeviz",
     "sphinx",
     "sphinx_rtd_theme",
     "sphinx-autodoc-typehints",
     "myst-parser",
-    "typing_extensions",
-    "watchdog",
-    "coverage",
     "pytest",
-    "pytest-runner",
 ]
 
 [project.urls]
