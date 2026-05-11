@@ -5,7 +5,7 @@ If you want to use the ASTRA-toolbox and tomosipo in an environment such as
 `Google Colab <https://colab.research.google.com/>`_, then you can install
 tomosipo as follows:
 
-.. code-block:: python
+.. code-block::
 
    ! apt install build-essential autoconf libtool
    ! pip install cython
