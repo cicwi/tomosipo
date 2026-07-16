@@ -42,8 +42,8 @@ dev = [
 [project.urls]
 Homepage = "https://github.com/cicwi/tomosipo"
 
-[tool.setuptools.packages.find]
-include = ["tomosipo*"]
+[tool.setuptools]
+packages = ["tomosipo"]
 
 [tool.pytest.ini_options]
 markers = [
