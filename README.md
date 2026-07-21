@@ -1,39 +1,37 @@
-![img](./doc/img/logo.svg)
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/cicwi/tomosipo/master/doc/img/logo_title.svg" width="300">
+</h1><br>
 
-<a id="org584a4eb"></a>
-# Tomosipo
+[![DOI badge](https://img.shields.io/badge/DOI-10.1364%2Foe.439909-blue)](https://doi.org/10.1364/oe.439909)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-orange.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-[![Anaconda-Server Badge](https://anaconda.org/aahendriksen/tomosipo/badges/version.svg)](https://anaconda.org/aahendriksen/tomosipo)
-[![Anaconda-Server Badge](https://anaconda.org/aahendriksen/tomosipo/badges/latest_release_relative_date.svg)](https://anaconda.org/aahendriksen/tomosipo)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
-Tomosipo is a pythonic wrapper for the ASTRA-toolbox of high-performance GPU
-primitives for 3D tomography.
+Tomosipo is a powerful, pythonic interface for the ASTRA Toolbox of high-performance GPU
+primitives for tomography.
 
 The aim of this library is to:
 
--   Expose a user-friendly API for high-performance 3D tomography, while
-    allowing strict control over resource usage
-    -   The [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) library contains implementations of reconstruction algorithms using Tomosipo
+-   Expose a user-friendly API for high-performance 3D tomography, while allowing strict
+    control over resource usage
+    -   The [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) library
+        contains implementations of reconstruction algorithms using Tomosipo
 -   Enable easy manipulation and visualization of 3D geometries
 -   Provide easy integration with
     -   Deep learning toolkits, such as [PyTorch](https://pytorch.org)
-    -   [The operator discretization library (ODL)](https://github.com/odlgroup/odl) for optimization in
-        inverse problems
-    -   [PyQtGraph](http://pyqtgraph.org/) for interactive visualization of geometries and data
-    
+    -   [The operator discretization library (ODL)](https://github.com/odlgroup/odl) for
+        optimization in inverse problems
+    -   [PyQtGraph](http://pyqtgraph.org/) for interactive visualization of geometries
+        and data
 
-The documentation can be found
-[here](https://aahendriksen.gitlab.io/tomosipo/index.html). An introduction and
-demonstration of `tomosipo` was published in [Optics
-Express](https://doi.org/10.1364/oe.439909).
 
-2.  [Installation](#org85d2a99)
-3.  [Usage](#orgb723de1)
-    1.  [Create and visualize geometries](#org887ab1a)
-    2.  [Express algorithms succinctly](#orgc1f2b6b)
-    3.  [More examples](#org4c299a8)
-4.  [Authors and contributors](#org2e2678c)
+The documentation can be found [here](https://cicwi.github.io/tomosipo/index.html).
+An introduction and demonstration of `tomosipo` was published in [Optics Express](https://doi.org/10.1364/oe.439909).
+
+-  [Installation](#installation)
+-  [Usage](#usage)
+    - [Create and visualize geometries](#create-and-visualize-geometries)
+    - [Express algorithms succinctly](#express-algorithms-succinctly)
+    - [More examples](#more-examples)
+-  [Authors and contributors](#authors-and-contributors)
 
 
 # Citing tomosipo
@@ -59,46 +57,39 @@ entry:
 }
 ```
 
-<a id="org85d2a99"></a>
 # Installation
 
-A minimal installation requires:
 
--   python >= 3.6
--   ASTRA-toolbox >= 2.0
--   CUDA
+### Using conda
 
-The requirements can be installed using the anaconda package manager. The
-following snippet creates a new conda environment named `tomosipo` (replace
-`X.X` by your CUDA version)
-```
-conda create -n tomosipo cudatoolkit=<X.X> tomosipo -c astra-toolbox -c aahendriksen -c defaults
+```bash
+conda install tomosipo -c conda-forge
 ```
 
-An installation with Pytorch and [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) can be created with the following snippet
-```
-conda create -n tomosipo tomosipo pytorch==2.0.1 pytorch-cuda=11.7 tqdm -c pytorch -c nvidia -c astra-toolbox/label/dev -c aahendriksen -c defaults
+An installation with Pytorch and [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) can be created with the
+following snippet:
 
+```bash
+conda create -n tomosipo tomosipo pytorch -c conda-forge
 conda activate tomosipo
 pip install git+https://github.com/ahendriksen/ts_algorithms.git
 ```
-From PyTorch version 2 the cuda toolkit dependencies have changed from the _cudatoolkit_ package to the _pytorch-cuda_ package. The development version of Astra uses the _cuda-cudart_ and _libcufft_ packages which are automatically included by installing _pytorch-cuda_.
 
-More information about installation is provided in the [documentation](https://aahendriksen.gitlab.io/tomosipo/intro/install.html).
+### Using pip
 
-<a id="orgb723de1"></a>
+```bash
+pip install tomosipo
+```
+
+More information about installation is provided in the [documentation](https://cicwi.github.io/tomosipo/intro/install.html).
+
 # Usage
-
-Simple examples:
-
-<a id="org887ab1a"></a>
 
 ## Create and visualize geometries
 
-You can follow along on [Google
-Colab](https://colab.research.google.com/github/ahendriksen/tomosipo/blob/master/notebooks/00_getting_started_google_colab.ipynb).
+You can follow along on [Google Colab](https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/00_getting_started_google_colab.ipynb).
 
-``` python
+```python
 import astra
 import numpy as np
 import tomosipo as ts
@@ -115,20 +106,15 @@ print(vg)
 ts.svg(pg, vg)
 ```
 
-
-
-<a id="orgc1f2b6b"></a>
-
 ## Express algorithms succinctly
 
-In the following example, we implement the simultaneous iterative
-reconstruction algorithm (SIRT) in a couple of lines. This examples
-demonstrates the use of the forward and backward projection.
+In the following example, we implement the simultaneous iterative reconstruction
+algorithm (SIRT) in a couple of lines. This example demonstrates the use of the forward
+and backward projection.
 
-First, the SIRT algorithm is implemented using numpy arrays, which
-reside in system RAM. Then, we move all data onto the GPU, and compute
-the same algorithm using PyTorch. This is faster, because no transfers
-between system RAM and GPU are necessary.
+First, the SIRT algorithm is implemented using numpy arrays, which reside in system RAM.
+Then, we move all data onto the GPU, and compute the same algorithm using PyTorch. This
+is faster, because no transfers between system RAM and GPU are necessary.
 
 ``` python
 import astra
@@ -187,33 +173,31 @@ print(f"SIRT finished in {timer() - start:0.2f} seconds using PyTorch")
     SIRT finished in 2.07 seconds
     SIRT finished in 0.94 seconds using PyTorch
 
-A similar implementation of SIRT and succinct implementations of some other reconstruction algorithms are available in the [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) library.
-
-<a id="org4c299a8"></a>
+A similar implementation of SIRT and succinct implementations of some other
+reconstruction algorithms are available in the
+[ts_algorithms](https://github.com/ahendriksen/ts_algorithms) library.
 
 ## More examples
 
-Please checkout the `examples` and `notebooks` directory for more examples.
-
-
-<a id="org2e2678c"></a>
+Please check out the [documentation](https://cicwi.github.io/tomosipo/) and the
+[`notebooks/`](https://github.com/cicwi/tomosipo/tree/master/notebooks) directory for
+more examples.
 
 # Authors and contributors
 
 tomosipo is developed by the Computational Imaging group at CWI.
 
-Current maintainer:
-
--   **Alexander Skorikov**
-
 Original author:
 
 -   **Allard Hendriksen**
 
+Current maintainer:
+
+-   **Alexander Skorikov**
+
 We thank the following authors for their contribution
 
 -   **Johannes Leuschner** - ODL integration
--   **Dirk Schut** - various features and long time maintenance of the package
+-   **Dirk Schut** - various features and for the long time maintenance of the package
 
 See also the list of contributors who participated in this project.
-
