@@ -1,18 +1,14 @@
 import pytest
 import tomosipo as ts
 from . import skip_if_no_cuda
-from tomosipo.torch_support import (
-    to_autograd,
-    AutogradOperator,
-    autograd_operator
-)
-
 try:
     import torch
-
+    from tomosipo.torch_support import (
+        to_autograd,
+        AutogradOperator,
+        autograd_operator
+    )
     torch_present = True
-
-
 except ModuleNotFoundError:
     torch_present = False
 
