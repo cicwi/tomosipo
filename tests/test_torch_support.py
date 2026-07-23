@@ -71,6 +71,7 @@ def test_fp_bp(device):
 
 
 @skip_if_no_torch
+@skip_if_no_cuda
 def test_float64():
     vg = ts.volume(shape=(1, N, N))
     pg = ts.parallel(angles=N_angles, shape=(1, M))
@@ -85,6 +86,7 @@ def test_float64():
 
 
 @skip_if_no_torch
+@skip_if_no_cuda
 def test_autograd():
     vg = ts.volume(shape=(1, N, N))
     pg = ts.parallel(angles=N_angles, shape=(1, M))
@@ -97,6 +99,7 @@ def test_autograd():
 
 
 @skip_if_no_torch
+@skip_if_no_cuda
 def test_autograd_shape():
     vg = ts.volume(shape=(1, N, N))
     pg = ts.parallel(angles=N_angles, shape=(1, M))
@@ -117,6 +120,7 @@ def test_autograd_shape():
 
 
 @skip_if_no_torch
+@skip_if_no_cuda
 def test_autograd_operator():
     vg = ts.volume(shape=(1, N, N))
     pg = ts.parallel(angles=N_angles, shape=(1, M))
@@ -154,6 +158,7 @@ def test_autograd_operator():
 
 
 @skip_if_no_torch
+@skip_if_no_cuda
 def test_autograd_operator_backward():
     vg = ts.volume(shape=(1, N, N))
     pg = ts.parallel(angles=N_angles, shape=(1, M))
@@ -163,7 +168,7 @@ def test_autograd_operator_backward():
     y = A_ag(x)
     y.backward(y)
     assert (torch.allclose(x.grad, A.T(A(x))))
-    
+
     p = torch.ones(A_ag.range_shape, dtype=torch.float32, requires_grad=True)
     q = A_ag.T(p)
     q.backward(q)
