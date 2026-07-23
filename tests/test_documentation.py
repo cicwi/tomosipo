@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 import pytest
-from sphinx.application import Sphinx
+try:
+    from sphinx.application import Sphinx
+except ImportError:
+    pytest.skip("Sphinx is not installed", allow_module_level=True)
 
 
 @pytest.mark.slow
