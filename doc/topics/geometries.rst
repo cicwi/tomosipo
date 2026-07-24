@@ -96,10 +96,6 @@ and showing the subvolumes:
    :alt: A volume and three sub-volumes that were created by indexing into it.
 
 
-More information about how geometries can be indexed and recombined can be found
-in :ref:`topics_indexing_concatenation`.
-
-
 Overview of geometries
 ======================
 
