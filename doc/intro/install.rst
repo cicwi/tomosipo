@@ -10,7 +10,7 @@ A minimal installation requires:
 Install the latest Git version
 ------------------------------
 
-First, install the requirements using the [conda](https://docs.conda.io/en/latest/)
+First, install the requirements using the `conda <https://docs.conda.io/en/latest/>`_
 package manager. The following snippet creates a new conda environment named `tomosipo`:
 
 .. code-block:: bash
@@ -27,7 +27,7 @@ After activating the environment containing the dependencies, install tomosipo u
 Install optional dependencies
 -----------------------------
 
-To use tomosipo with PyTorch, cupy, Qt, and [ts_algorithms](https://github.com/ahendriksen/ts_algorithms),
+To use tomosipo with PyTorch, cupy, Qt, and `ts_algorithms <https://github.com/ahendriksen/ts_algorithms>`_,
 install:
 
 .. code-block:: bash
