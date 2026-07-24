@@ -1,5 +1,5 @@
-API Summary
-===========
+Summary
+=======
 
 We summarize important functions and classes that you may encounter in daily
 usage of tomosipo. This list is not meant to be exhaustive.
