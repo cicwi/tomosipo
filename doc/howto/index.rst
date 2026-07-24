@@ -14,7 +14,6 @@ Using tomosipo
    :glob:
 
    google_colab
-   figure_for_paper
 
 
 .. _howto_geometry_templates:
