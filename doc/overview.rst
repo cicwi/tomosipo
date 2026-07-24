@@ -2,16 +2,12 @@
 Tomosipo
 ===========================================================================
 
-.. rubric:: High-performance 3D tomography with flexible geometries in Python
+Tomosipo is a Pythonic interface to the `ASTRA Toolbox <https://astra-toolbox.com>`_
+for flexible, high-performance 3D tomography. It aims to:
 
-Tomosipo is a pythonic wrapper for the ASTRA-toolbox of
-high-performance GPU primitives for 3D tomography.
-
-The aim of tomosipo is to:
-
-1. Expose a user-friendly API for 3D tomography;
-2. Enable easy manipulation and visualisation of 3D geometries;
-3. Express high-performance GPU-accelerated algorithms succinctly.
+- Expose a user-friendly API for 3D tomography without compromising performance or flexibility;
+- Enable convenient definition, manipulation and visualisation of complex 3D geometries;
+- Provide easy integration with other libraries and frameworks, such as PyTorch.
 
 First steps
 ===========
