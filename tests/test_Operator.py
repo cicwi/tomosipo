@@ -51,7 +51,7 @@ def test_operator_additive():
 
 @skip_if_no_cuda
 @pytest.mark.parametrize(
-    "S, T, R", itertools.product(scalings, translations, rotations)
+    "S, T, R", list(itertools.product(scalings, translations, rotations))
 )
 def test_operator_volume_vector(S, T, R):
     """Tests ts.operator with volume vector geometries

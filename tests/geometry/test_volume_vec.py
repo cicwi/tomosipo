@@ -84,7 +84,7 @@ def test_eq():
 
 
 @pytest.mark.parametrize(
-    "vg, T, S, R", itertools.product(vgs, translations, scalings, rotations)
+    "vg, T, S, R", list(itertools.product(vgs, translations, scalings, rotations))
 )
 def test_properties_under_transformations(vg, T, S, R):
     TSR = T * S * R

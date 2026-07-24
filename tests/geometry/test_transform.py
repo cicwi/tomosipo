@@ -56,7 +56,7 @@ transforms = translations + rotations + scalings
 
 @pytest.mark.parametrize(
     "vg, T, R, M, S",
-    itertools.product(vgs, translations, rotations, reflections, scalings),
+    list(itertools.product(vgs, translations, rotations, reflections, scalings)),
 )
 def test_equations(vg, T, R, M, S):
     # identity:
@@ -78,7 +78,7 @@ def test_equations(vg, T, R, M, S):
 
 
 @pytest.mark.parametrize(
-    "T, R, S", itertools.product(translations, rotations, scalings)
+    "T, R, S", list(itertools.product(translations, rotations, scalings))
 )
 def test_equations_on_vecs(T, R, S):
     id = transform.identity()
@@ -110,7 +110,7 @@ def test_equations_on_vecs(T, R, S):
 
 
 @pytest.mark.parametrize(
-    "T, R, S", itertools.product(translations, rotations, scalings)
+    "T, R, S", list(itertools.product(translations, rotations, scalings))
 )
 def test_equations_on_points(T, R, S):
     id = transform.identity()
