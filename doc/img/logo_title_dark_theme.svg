@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="444.34" height="139.76" version="1.1" viewBox="0 0 117.57 36.978" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-50.597 -.85293)">
+  <ellipse cx="70.546" cy="19.342" rx="12.716" ry="12.127" fill="#e6e6e6" stroke="#e6e6e6" stroke-width=".26458"/>
+  <text x="86.404678" y="23.967125" fill="#e6e6e6" font-family="sans-serif" font-size="16.933px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="86.404678" y="23.967125" fill="#e6e6e6" font-family="'Ubuntu Light'" font-size="16.933px" font-weight="300" stroke-width=".26458">Tomosipo</tspan></text>
+  <rect transform="rotate(45)" x="66.284" y="-33.483" width="3.7371" height="3.7371" fill="#cf113a"/>
+  <rect transform="rotate(45)" x="55.073" y="-44.695" width="3.7371" height="3.7371" fill="#cf113a"/>
+  <path d="m70.546 7.3386 2.6425 2.6425v5.2851l7.9276 7.9276v2.6425l-7.9276 1e-6 -2.6425 2.6425-2.6425-2.6425h-7.9276v-2.6425l7.9276-7.9276v-5.2851z" fill="none" stroke="#4d4d4d" stroke-width=".26458"/>
+  <path d="m70.546 12.624 5.2851 5.2851-5.2851 5.2851-5.2851-5.2851z" fill="none" stroke="#4d4d4d" stroke-width=".26458"/>
+ </g>
+</svg>
