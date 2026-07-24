@@ -24,6 +24,8 @@ After activating the environment containing the dependencies, install tomosipo u
     conda activate tomosipo
     pip install git+https://github.com/cicwi/tomosipo
 
+.. _intro_install_with_pytorch:
+
 Install optional dependencies
 -----------------------------
 
