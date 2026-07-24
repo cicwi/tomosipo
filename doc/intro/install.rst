@@ -7,34 +7,29 @@ A minimal installation requires:
 * ASTRA-toolbox >= 2.0
 * GPU supporting CUDA
 
-Install the latest Git version
-------------------------------
+Minimal installation
+--------------------
 
-First, install the requirements using the `conda <https://docs.conda.io/en/latest/>`_
-package manager. The following snippet creates a new conda environment named `tomosipo`:
-
-.. code-block:: bash
-
-   conda create -n tomosipo astra-toolbox -c conda-forge
-
-After activating the environment containing the dependencies, install tomosipo using pip:
+We recommend using `conda <https://docs.conda.io/en/latest/>`_ to install the required dependencies.
+The following commands create a new environment named ``tomosipo`` and install tomosipo from GitHub:
 
 .. code-block:: bash
 
-    conda activate tomosipo
-    pip install git+https://github.com/cicwi/tomosipo
+   conda create -n tomosipo python=3.10 pip astra-toolbox -c conda-forge
+   conda activate tomosipo
+   pip install git+https://github.com/cicwi/tomosipo.git
 
 .. _intro_install_with_pytorch:
 
-Install optional dependencies
------------------------------
+Installation with optional dependencies
+---------------------------------------
 
-To use tomosipo with PyTorch, cupy, Qt, and `ts_algorithms <https://github.com/ahendriksen/ts_algorithms>`_,
+To use tomosipo with PyTorch, CuPy, Qt, and `ts_algorithms <https://github.com/ahendriksen/ts_algorithms>`_,
 install:
 
 .. code-block:: bash
 
-    conda create -n tomosipo astra-toolbox pytorch cupy pyqtgraph pyqt pyopengl cupy -c conda-forge
+    conda create -n tomosipo astra-toolbox pytorch cupy pyqtgraph pyqt pyopengl -c conda-forge
     conda activate tomosipo
     pip install git+https://github.com/cicwi/tomosipo
     pip install git+https://github.com/ahendriksen/ts_algorithms
