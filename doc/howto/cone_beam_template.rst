@@ -1,5 +1,5 @@
-Editable cone beam template
-===============================
+Cone beam template
+==================
 
 The following can serve as a template to construct a flexible cone beam
 geometry. For a step by step walk through about modeling geometries in the lab

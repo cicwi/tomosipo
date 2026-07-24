@@ -1,5 +1,5 @@
-Editable helical cone beam template
-===================================
+Helical cone beam template
+==========================
 
 The following can serve as a template to construct a flexible helical cone beam
 geometry. For a step by step walk through about modeling geometries in the lab
