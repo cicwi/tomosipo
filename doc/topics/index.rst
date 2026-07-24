@@ -9,10 +9,8 @@ Introductions to all the key parts of tomosipo you’ll need to know:
    geometries
    transforms
    operator
-   display
-   indexing_concatenation
-
-   astra
-   pytorch
 
    conventions
+
+.. TODO: Displaying and visualizing geometries, geometry indexing and concatenation,
+   ASTRA interoperability, integration with PyTorch.
