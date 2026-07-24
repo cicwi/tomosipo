@@ -8,11 +8,11 @@
 .. toctree::
    :hidden:
 
-   overview
+   Overview <overview>
    intro/index
    topics/index
-   ref/index
    howto/index
+   ref/index
    changelog
 
 

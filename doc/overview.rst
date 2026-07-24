@@ -42,37 +42,28 @@ install:
 First steps
 ===========
 
-Are you new to tomosipo? This is the place to start!
+- :doc:`intro/forward_projection`
+- :doc:`intro/simple_reconstruction`
+- Advanced tutorials:
 
-* **From scratch:**
-  :doc:`Installation <intro/install>`
-
-* **Tutorials:**
-  :doc:`intro/forward_projection` | :doc:`intro/simple_reconstruction`
-
-* **Advanced Tutorials:**
-  :doc:`intro/fast_reconstruction` | :doc:`intro/lab_frame`
-
+  - :doc:`intro/fast_reconstruction`
+  - :doc:`intro/lab_frame`
 
 How the documentation is organized
 ==================================
 
-Tomosipo has different types of documentation. A high-level overview of how it's
-organized will help you know where to look for certain things:
+Tomosipo has different types of documentation:
 
-* :doc:`Tutorials </intro/index>` take you by the hand through a series of steps
-  to create a tomographic reconstruction. Start here if you're new to tomosipo
-  or tomography.
+* :doc:`Tutorials </intro/index>` are detailed walk-through guides. Start here if you're
+  new to tomosipo or tomography.
 
-* :doc:`Topic guides </topics/index>` discuss key topics and concepts at a
-  fairly high level and provide useful background information and explanation.
+* :doc:`Topic guides </topics/index>` discuss key concepts at a high level and provide
+  useful background information and explanation.
 
-* :doc:`Reference guides </ref/index>` serve as technical reference for APIs and
-  other aspects of tomosipo's machinery.
+* :doc:`How-to guides </howto/index>` are short recipes assuming some knowledge of how
+  tomosipo works.
 
-* :doc:`How-to guides </howto/index>` are recipes. They guide you through the
-  steps involved in addressing key problems and use-cases. They are more
-  goal-oriented than tutorials and assume some knowledge of how tomosipo works.
+* :doc:`API reference </ref/index>` is an extensive technical reference for tomosipo.
 
 Other resources
 ===============
@@ -87,4 +78,4 @@ Blog
 
 * `Modeling Cryo-EM using tomosipo <https://blog.allardhendriksen.nl/cwi-ci-group/modeling_cry_em_using_tomosipo/>`_
 * `Chambolle-Pock algorithm on the GPU using tomosipo <https://blog.allardhendriksen.nl/cwi-ci-group/chambolle_pock_using_tomosipo/>`_
-* `Tomosipo reconstruction the GPU <https://blog.allardhendriksen.nl/cwi-ci-group/advent-of-tomosipo-s003_gpu_reconstruction/>`_
+* `Tomosipo reconstruction on the GPU <https://blog.allardhendriksen.nl/cwi-ci-group/advent-of-tomosipo-s003_gpu_reconstruction/>`_

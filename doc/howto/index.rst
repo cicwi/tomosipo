@@ -1,5 +1,5 @@
-How-to guides and recipes
-=========================
+How-to guides
+=============
 
 Use these guides when you want to complete a specific task quickly. They focus
 on practical steps rather than background material; for concepts and design

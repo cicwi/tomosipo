@@ -1,5 +1,5 @@
-Introduction and tutorials
-==========================
+Tutorials
+=========
 
 This section contains quick start guides to get to know tomosipo.
 

@@ -1,5 +1,5 @@
-Reference
-=========
+API reference
+=============
 
 This section contains a short summary and a full technical reference for the API of tomosipo.
 
