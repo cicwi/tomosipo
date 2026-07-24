@@ -1,5 +1,5 @@
-Share an interactive notebook on Google Colab
-=============================================
+Tomosipo on Google Colab
+========================
 
 Tomosipo can be used in a `Google Colab <https://colab.research.google.com/>`_ notebook
 (make sure the runtime type is set to "GPU"). You can install tomosipo as follows:
