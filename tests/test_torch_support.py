@@ -79,7 +79,8 @@ def test_float64():
     A_ag = to_autograd(A)
 
     x = torch.ones((1, N, N), dtype=torch.float64)
-    y = A(x)
+    with pytest.warns(UserWarning, match="The type has been automatically converted"):
+        y = A(x)
     y_ag = A_ag(x)
 
     assert torch.equal(y, y_ag)
