@@ -3,11 +3,6 @@ Introduction and tutorials
 
 This section contains quick start guides to get to know tomosipo.
 
-.. toctree::
-
-   install
-
-
 Getting started
 ---------------
 

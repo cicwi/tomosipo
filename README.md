@@ -57,17 +57,17 @@ entry:
 # Installation
 
 We recommend using [conda](https://docs.conda.io/en/latest/) to install tomosipo. An
-installation with tomosipo, Pytorch and [ts_algorithms](https://github.com/ahendriksen/ts_algorithms)
+installation with tomosipo, Pytorch, and [ts_algorithms](https://github.com/ahendriksen/ts_algorithms)
 can be created with the following snippet:
 
 ```bash
-conda create -n tomosipo astra-toolbox pytorch -c conda-forge
+conda create -n tomosipo -c conda-forge astra-toolbox pytorch
 conda activate tomosipo
-pip install git+https://github,com/cicwi/tomosipo.git
+pip install git+https://github.com/cicwi/tomosipo.git
 pip install git+https://github.com/ahendriksen/ts_algorithms.git
 ```
 
-More information about installation is provided in the [documentation](https://cicwi.github.io/tomosipo/intro/install.html).
+More information about installation is provided in the [documentation](https://cicwi.github.io/tomosipo/index.html#install).
 
 # Usage
 
