@@ -3,59 +3,36 @@ Install tomosipo
 
 A minimal installation requires:
 
-* python >= 3.6
+* python >= 3.10
 * ASTRA-toolbox >= 2.0
-* CUDA
+* GPU supporting CUDA
 
-Installation using anaconda
----------------------------
+Install the latest Git version
+------------------------------
 
-The requirements can be installed using the anaconda package manager. The
-following snippet creates a new conda environment named `tomosipo` (replace
-`X.X` by your CUDA version)
-
-.. code-block:: bash
-
-   conda create -n tomosipo cudatoolkit=<X.X> tomosipo -c defaults -c astra-toolbox -c aahendriksen
-
-
-Install the latest development branch
--------------------------------------
-
-To install the latest development branch from GitHub, first create a new
-environment named `tomosipo` containing the required packages:
+First, install the requirements using the [conda](https://docs.conda.io/en/latest/)
+package manager. The following snippet creates a new conda environment named `tomosipo`:
 
 .. code-block:: bash
 
-    conda create -n tomosipo python=3.8 astra-toolbox cudatoolkit=X.X -c astra-toolbox
+   conda create -n tomosipo astra-toolbox -c conda-forge
 
-Then activate the environment and install tomosipo using pip:
+After activating the environment containing the dependencies, install tomosipo using pip:
 
 .. code-block:: bash
 
-    source activate tomosipo
-    pip install git+https://github.com/ahendriksen/tomosipo@develop
+    conda activate tomosipo
+    pip install git+https://github.com/cicwi/tomosipo
 
 Install optional dependencies
 -----------------------------
 
-To use tomosipo with PyTorch, QT, ODL, and cupy, install:
+To use tomosipo with PyTorch, cupy, Qt, and [ts_algorithms](https://github.com/ahendriksen/ts_algorithms),
+install:
 
 .. code-block:: bash
 
-    conda create -n tomosipo tomosipo cudatoolkit=<X.X> pytorch cupy pyqtgraph pyqt pyopengl cupy \
-                 -c defaults -c astra-toolbox -c pytorch -c conda-forge -c aahendriksen
-    source activate tomosipo
-    # Install latest version of ODL:
-    pip install git+https://github.com/odlgroup/odl
-
-.. _intro_install_with_pytorch:
-
-Install with pytorch
---------------------
-
-To just install PyTorch, use
-
-.. code-block:: bash
-
-   conda create -n tomosipo pytorch cudatoolkit=<X.X> tomosipo -c defaults -c astra-toolbox -c aahendriksen -c pytorch
+    conda create -n tomosipo astra-toolbox pytorch cupy pyqtgraph pyqt pyopengl cupy -c conda-forge
+    conda activate tomosipo
+    pip install git+https://github.com/cicwi/tomosipo
+    pip install git+https://github.com/ahendriksen/ts_algorithms
