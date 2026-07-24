@@ -1,10 +1,9 @@
-HOWTOs and recipes
-===================
+How-to guides and recipes
+=========================
 
-Here you’ll find short answers to "How do I...?" types of questions. These
-how-to guides don’t cover topics in depth --- you’ll find that material in the
-topic guides and the API Reference. However, these guides will help you quickly
-accomplish common tasks.
+Use these guides when you want to complete a specific task quickly. They focus
+on practical steps rather than background material; for concepts and design
+details, see the topic guides and the API reference.
 
 Using tomosipo
 --------------
@@ -22,16 +21,16 @@ Standard geometry templates
 ---------------------------
 
 These templates can be used as a starting point for creating geometries with
-more flexibility than the standard ASTRA-toolbox geometries. They do not contain
-any explanations. For a step by step walk through, see :ref:`intro_lab_frame`.
+more flexibility than the standard ASTRA Toolbox geometries. They do not contain
+any explanations, but you can check :ref:`intro_lab_frame` for a step-by-step guide.
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   parallel_beam_template.rst
-   cone_beam_template.rst
-   helical_cone_beam_template.rst
+   parallel_beam_template
+   cone_beam_template
+   helical_cone_beam_template
 
 Contributing to tomosipo
 ------------------------
