@@ -57,11 +57,11 @@ Tomosipo has different types of documentation:
 * :doc:`Tutorials </intro/index>` are detailed walk-through guides. Start here if you're
   new to tomosipo or tomography.
 
-* :doc:`Topic guides </topics/index>` discuss key concepts at a high level and provide
-  useful background information and explanation.
+* :doc:`In-depth guides </topics/index>` discuss key concepts at a high level and
+  provide useful background information and explanation.
 
-* :doc:`How-to guides </howto/index>` are short recipes assuming some knowledge of how
-  tomosipo works.
+* :doc:`Short recipes </howto/index>` explain how to perform common tasks assuming some
+  knowledge of tomosipo.
 
 * :doc:`API reference </ref/index>` is an extensive technical reference for tomosipo.
 

@@ -1,7 +1,7 @@
-Topic guides
-============
+In-depth guides
+===============
 
-Introductions to all the key parts of tomosipo you’ll need to know:
+Explanations of the key parts of tomosipo:
 
 .. toctree::
    :maxdepth: 2
@@ -12,5 +12,5 @@ Introductions to all the key parts of tomosipo you’ll need to know:
 
    conventions
 
-.. TODO: Displaying and visualizing geometries, geometry indexing and concatenation,
-   ASTRA interoperability, integration with PyTorch.
+.. TODO: Geometry visualization, indexing and concatenation, ASTRA interoperability,
+   integration with PyTorch.

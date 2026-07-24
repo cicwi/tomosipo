@@ -1,12 +1,12 @@
-How-to guides
+Short recipes
 =============
 
 Use these guides when you want to complete a specific task quickly. They focus
 on practical steps rather than background material; for concepts and design
 details, see the topic guides and the API reference.
 
-Using tomosipo
---------------
+General
+-------
 
 .. toctree::
    :maxdepth: 1
