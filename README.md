@@ -169,7 +169,7 @@ reconstruction algorithms are available in the
 ## More examples
 
 Please check out the [documentation](https://cicwi.github.io/tomosipo/) and the
-[`notebooks/`](https://github.com/cicwi/tomosipo/tree/master/notebooks) directory for
+[`examples/`](https://github.com/cicwi/tomosipo/tree/master/examples) directory for
 more examples.
 
 # Authors and contributors
