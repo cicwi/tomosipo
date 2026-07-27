@@ -9,6 +9,9 @@ for flexible, high-performance 3D tomography. It aims to:
 - Enable convenient definition, manipulation and visualisation of complex 3D geometries;
 - Provide easy integration with other libraries and frameworks, such as PyTorch.
 
+If you are looking for reconstruction algorithms built on top of Tomosipo, see
+`ts_algorithms <https://github.com/ahendriksen/ts_algorithms>`_.
+
 Install
 =======
 

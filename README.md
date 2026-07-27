@@ -9,15 +9,11 @@ Tomosipo is a Pythonic interface to the [ASTRA Toolbox](https://astra-toolbox.co
 flexible, high-performance 3D tomography. It aims to:
 
 -   Expose a user-friendly API for 3D tomography without compromising performance or flexibility
-    -   The [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) library
-        contains implementations of reconstruction algorithms using Tomosipo
 -   Enable convenient definition, manipulation and visualization of complex 3D geometries
--   Provide easy integration with
-    -   Deep learning toolkits, such as [PyTorch](https://pytorch.org)
-    -   [The operator discretization library (ODL)](https://github.com/odlgroup/odl) for
-        optimization in inverse problems
-    -   [PyQtGraph](http://pyqtgraph.org/) for interactive visualization of geometries
-        and data
+-   Provide easy integration with other libraries and frameworks, such as PyTorch.
+
+If you are looking for reconstruction algorithms built on top of Tomosipo, see
+[ts_algorithms](https://github.com/ahendriksen/ts_algorithms).
 
 # Installation
 
