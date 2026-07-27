@@ -8,4 +8,4 @@ Tomosipo can be used in a `Google Colab <https://colab.research.google.com/>`_ n
 
    ! pip install git+https://github.com/cicwi/tomosipo.git
 
-An example can be found `here <https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/00_getting_started_google_colab.ipynb>`_.
+An example can be found `here <https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/google_colab.ipynb>`_.

@@ -76,7 +76,7 @@ More information about installation is provided in the [documentation](https://c
 
 ## Create and visualize geometries
 
-You can follow along on [Google Colab](https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/00_getting_started_google_colab.ipynb).
+You can follow along on [Google Colab](https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/google_colab.ipynb).
 
 ```python
 import astra
