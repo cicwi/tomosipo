@@ -43,91 +43,65 @@ Express](https://doi.org/10.1364/oe.439909) paper.
 
 ## Create and visualize geometries
 
-You can follow along on [Google Colab](https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/google_colab.ipynb).
+You can also follow along in
+[Google Colab](https://colab.research.google.com/github/cicwi/tomosipo/blob/master/notebooks/google_colab.ipynb).
 
 ```python
-import astra
 import numpy as np
 import tomosipo as ts
 
-# Create 'unit' cone geometry
+# Create a cone-beam geometry
 pg = ts.cone(angles=20, size=np.sqrt(2), cone_angle=0.5)
 print(pg)
 
-# Create volume geometry of a unit cube on the origin
+# Create a unit volume centered at the origin
 vg = ts.volume()
 print(vg)
 
-# Display an animation of the acquisition geometry
-ts.svg(pg, vg)
+# Display the acquisition geometry as an SVG animation
+scene = ts.svg(pg, vg)
+scene
 ```
 
 ## Express algorithms succinctly
 
 In the following example, we implement the simultaneous iterative reconstruction
-algorithm (SIRT) in a couple of lines. This example demonstrates the use of the forward
-and backward projection.
+algorithm (SIRT) in a couple of lines of code. This example demonstrates the use of the
+forward and backward projection, and integration with PyTorch.
 
-First, the SIRT algorithm is implemented using numpy arrays, which reside in system RAM.
-Then, we move all data onto the GPU, and compute the same algorithm using PyTorch. This
-is faster, because no transfers between system RAM and GPU are necessary.
-
-``` python
-import astra
-import numpy as np
+```python
 import tomosipo as ts
-from timeit import default_timer as timer
-
-# Create 'unit' cone geometry, and a
-pg = ts.cone(size=np.sqrt(2), cone_angle=1/2, angles=100, shape=(128, 192))
-# Create volume geometry of a unit cube on the origin
-vg = ts.volume(shape=128)
-# Create projection operator
-A = ts.operator(vg, pg)
-
-# Create a phantom containing a small cube:
-phantom = np.zeros(A.domain_shape)
-phantom[20:50, 20:50, 20:50] = 1.0
-
-# Prepare preconditioning matrices R and C
-R = 1 / A(np.ones(A.domain_shape))
-R = np.minimum(R, 1 / ts.epsilon)
-C = 1 / A.T(np.ones(A.range_shape))
-C = np.minimum(C, 1 / ts.epsilon)
-
-# Reconstruct from sinogram y into x_rec in 100 iterations
-y = A(phantom)
-x_rec = np.zeros(A.domain_shape)
-num_iters = 100
-
-start = timer()
-for i in range(num_iters):
-    x_rec += C * A.T(R * (y - A(x_rec)))
-print(f"SIRT finished in {timer() - start:0.2f} seconds")
-
-# Perform the same computation on the GPU using PyTorch.
-# First, import pytorch:
 import torch
 
-# Move all data to GPU:
-dev = torch.device("cuda")
-y = torch.from_numpy(y).to(dev)
-R = torch.from_numpy(R).to(dev)
-C = torch.from_numpy(C).to(dev)
-x_rec = torch.zeros(A.domain_shape, device=dev)
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# Perform algorithm
-start = timer()
-for i in range(num_iters):
+# Create the geometries
+vg = ts.volume(shape=128)
+pg = ts.cone(shape=128, cone_angle=0.5, angles=100)
+
+# Create the projection operator
+A = ts.operator(vg, pg)
+
+# Create a simple phantom (a small cube)
+phantom = torch.zeros(A.domain_shape, device=device)
+phantom[20:50, 20:50, 20:50] = 1.0
+
+# Compute the sinogram
+y = A(phantom)
+
+# Prepare the standard SIRT preconditioners
+R = 1 / A(torch.ones(A.domain_shape, device=device))
+R = torch.minimum(R, 1 / ts.epsilon)
+C = 1 / A.T(torch.ones(A.range_shape, device=device))
+C = torch.minimum(C, 1 / ts.epsilon)
+
+# Reconstruct from y in 100 iterations
+x_rec = torch.zeros(A.domain_shape, device=device)
+num_iters = 100
+
+for _ in range(num_iters):
     x_rec += C * A.T(R * (y - A(x_rec)))
-
-# Convert reconstruction back to numpy array:
-x_rec = x_rec.cpu().numpy()
-print(f"SIRT finished in {timer() - start:0.2f} seconds using PyTorch")
 ```
-
-    SIRT finished in 2.07 seconds
-    SIRT finished in 0.94 seconds using PyTorch
 
 A similar implementation of SIRT and succinct implementations of some other
 reconstruction algorithms are available in the
