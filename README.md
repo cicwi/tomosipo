@@ -19,41 +19,6 @@ flexible, high-performance 3D tomography. It aims to:
     -   [PyQtGraph](http://pyqtgraph.org/) for interactive visualization of geometries
         and data
 
-
-The documentation can be found [here](https://cicwi.github.io/tomosipo/index.html).
-An introduction and demonstration of `tomosipo` was published in [Optics Express](https://doi.org/10.1364/oe.439909).
-
--  [Installation](#installation)
--  [Usage](#usage)
-    - [Create and visualize geometries](#create-and-visualize-geometries)
-    - [Express algorithms succinctly](#express-algorithms-succinctly)
-    - [More examples](#more-examples)
--  [Authors and contributors](#authors-and-contributors)
-
-
-# Citing tomosipo
-
-If you use `tomosipo` in scientific publications, we would appreciate citations
-of [our paper](https://doi.org/10.1364/oe.439909) using the following Bibtex
-entry:
-
-``` bibtex
-@Article{hendriksen-2021-tomos,
-  author          = {Hendriksen, Allard and Schut, Dirk and Palenstijn, Willem
-                  Jan and Viganò, Nicola and Kim, Jisoo and Pelt, Dani{\"e}l and
-                  van Leeuwen, Tristan and Batenburg, K. Joost},
-  title           = {Tomosipo: Fast, Flexible, and Convenient {3D} Tomography for
-                  Complex Scanning Geometries in {Python}},
-  journal         = {Optics Express},
-  year            = 2021,
-  doi             = {10.1364/oe.439909},
-  url             = {https://doi.org/10.1364/oe.439909},
-  issn            = {1094-4087},
-  month           = {Oct},
-  publisher       = {The Optical Society},
-}
-```
-
 # Installation
 
 We recommend using [conda](https://docs.conda.io/en/latest/) to install tomosipo. An
@@ -70,6 +35,11 @@ pip install git+https://github.com/ahendriksen/ts_algorithms.git
 More information about installation is provided in the [documentation](https://cicwi.github.io/tomosipo/index.html#install).
 
 # Usage
+
+Please refer to the [documentation](https://cicwi.github.io/tomosipo/index.html) and the
+[`examples/`](https://github.com/cicwi/tomosipo/tree/master/examples) directory. An
+introduction and demonstration of tomosipo can also be found in the associated [Optics
+Express](https://doi.org/10.1364/oe.439909) paper.
 
 ## Create and visualize geometries
 
@@ -163,11 +133,28 @@ A similar implementation of SIRT and succinct implementations of some other
 reconstruction algorithms are available in the
 [ts_algorithms](https://github.com/ahendriksen/ts_algorithms) library.
 
-## More examples
+# Citing tomosipo
 
-Please check out the [documentation](https://cicwi.github.io/tomosipo/) and the
-[`examples/`](https://github.com/cicwi/tomosipo/tree/master/examples) directory for
-more examples.
+If you use tomosipo in scientific publications, we would appreciate citations
+of [our paper](https://doi.org/10.1364/oe.439909) using the following Bibtex
+entry:
+
+``` bibtex
+@Article{hendriksen-2021-tomos,
+  author          = {Hendriksen, Allard and Schut, Dirk and Palenstijn, Willem
+                  Jan and Viganò, Nicola and Kim, Jisoo and Pelt, Dani{\"e}l and
+                  van Leeuwen, Tristan and Batenburg, K. Joost},
+  title           = {Tomosipo: Fast, Flexible, and Convenient {3D} Tomography for
+                  Complex Scanning Geometries in {Python}},
+  journal         = {Optics Express},
+  year            = 2021,
+  doi             = {10.1364/oe.439909},
+  url             = {https://doi.org/10.1364/oe.439909},
+  issn            = {1094-4087},
+  month           = {Oct},
+  publisher       = {The Optical Society},
+}
+```
 
 # Authors and contributors
 
