@@ -112,3 +112,20 @@ def test_slice_interval():
     assert st[1::3].center == approx(st.center)
     assert st[0::3].center != approx(st.center)
     assert st[2::3].center != approx(st.center)
+
+
+def test_slice_interval_negative_step():
+    # Reversing the interval keeps the number of pixels; size and
+    # pixel_size pick up the sign of the step (R < L for a negative step)
+    st = Interval(0, 8, 8)
+    assert st[::-1].length == 8
+    assert st[::-1].size == approx(-8.0)
+    assert st[::-1].pixel_size == approx(-1.0)
+
+    # Check that length is consistent with np indexing:
+    for length in [1, 2, 5]:
+        st = Interval(0, 1, length)
+        ones = np.ones(length)
+        for step in [-1, -2, -3]:
+            assert st[::step].length == len(ones[::step])
+            assert st[::step].pixel_size == approx(step * st.pixel_size)

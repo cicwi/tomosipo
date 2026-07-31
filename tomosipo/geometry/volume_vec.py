@@ -411,9 +411,9 @@ class VolumeVectorGeometry(object):
 
         """
         new_shape = ts.types.to_shape3d(new_shape)
-        new_w = self.sizes[:, 0] / max(new_shape[0], 1)
-        new_v = self.sizes[:, 1] / max(new_shape[1], 1)
-        new_u = self.sizes[:, 2] / max(new_shape[2], 1)
+        new_w = self.w / max(new_shape[0], 1) * self.shape[0]
+        new_v = self.v / max(new_shape[1], 1) * self.shape[1]
+        new_u = self.u / max(new_shape[2], 1) * self.shape[2]
 
         return VolumeVectorGeometry(
             new_shape,
