@@ -108,12 +108,12 @@ def slice_interval(left, right, length, key):
     start, stop, step = key.indices(length)
     # `(stop - start)` is not necessarily divisible by `step`. We have
     # to calculate new_len in this convoluted way:
-    new_len = max(0, (stop - start + step - 1) // step)
-    stop = max(start, start + (new_len - 1) * step + 1)
+    new_len = max(0, (stop - start + step - (1 if step > 0 else -1)) // step)
+    last_idx = start + (new_len - 1) * step
 
     new_pixel_size = pixel_size * step
     L = left + start * pixel_size + 0.5 * pixel_size * (1 - step)
-    R = left + stop * pixel_size + 0.5 * pixel_size * (step - 1)
+    R = left + last_idx * pixel_size + 0.5 * pixel_size * (step + 1)
 
     # Prevent division by zero
     return (L, R, new_len, new_pixel_size)
