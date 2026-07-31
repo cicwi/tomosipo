@@ -141,6 +141,14 @@ def test_get_item():
         vg[1, 2, 3, 4, 5]
 
 
+def test_reshape(vg):
+    assert vg.reshape(1).shape == (1, 1, 1)
+    assert vg.reshape((3, 5, 7)).shape == (3, 5, 7)
+
+    assert vg.reshape(1).sizes == approx(vg.sizes)
+    assert vg.reshape((3, 5, 7)).sizes == approx(vg.sizes)
+
+
 def test_size():
     vg = ts.geometry.random_volume().to_vec()
     # Non-uniform scaling
